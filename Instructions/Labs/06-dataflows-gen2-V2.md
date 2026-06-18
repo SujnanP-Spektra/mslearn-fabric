@@ -95,6 +95,18 @@ In this task, you’ll add a data destination for the Dataflow to determine wher
 
 1. Select **Home** tab, and click on **Save and Run**.
 
+      ![](./Images/CS3.png)
+
+   > **Note:** Click **Save & Run** to save the latest query transformations and execute the dataflow using the updated configuration.
+
+1. In the navigation pane, select the **fabric-<inject key="DeploymentID"></inject>** workspace **(1)**, and then expand and select the same workspace **(2)** to open the workspace and monitor the execution status of the **Transform Orders Dataflow**.
+
+    ![](./Images/fabricnav.png)
+
+1. Wait until the **Transform Orders Dataflow** execution completes, and verify that the **Status** column displays a green check mark, indicating that the dataflow run completed successfully.
+
+    ![](./Images/CS4.png)
+
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. 
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
@@ -142,6 +154,8 @@ In this task, you’ll add a dataflow to a pipeline to streamline the data proce
    
    ![](./Images/prun.png)
 
+   > Note:If the Pipe-line run fails navigate back to Lakehouse and refresh the 
+
 1. Navigate to your **Lakehouse_<inject key="DeploymentID" enableCopy="false"/>** Lakehouse.
 
 1. Expand the **Tables** section and select the **orders** table created by your dataflow.
@@ -162,4 +176,3 @@ In this task, you’ll add a dataflow to a pipeline to streamline the data proce
 In this exercise, you have created a Dataflow (Gen2) to ingest data , added data destination for Dataflow and a dataflow to a pipeline.
 
 ### You have successfully completed the lab
-
