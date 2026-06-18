@@ -174,4 +174,6 @@ In this task, switch to the Data engineering experience and create a new Lakehou
 
 In this exercise, you have signed up for the Microsoft Fabric trial and created a workspace.
 
-### You have successfully completed the exercise. Click on Next >> to proceed with the next exercise.
+## Click Next to continue to the next lab.
+
+![](./Images/AI38.png)

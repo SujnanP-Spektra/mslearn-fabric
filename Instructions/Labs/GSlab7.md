@@ -72,7 +72,7 @@ The architecture for this lab involves the following key components:
 
 Once you're ready to begin, your virtual machine and lab guide will be available directly within your web browser.
 
-![](./Images/vm00100.png)
+![](./Images/CS2.png)
 
 ## Virtual Machine & Lab Guide
 
@@ -83,13 +83,13 @@ The lab guide remains visible throughout the lab exercises.
 
 Navigate to the **Environment** tab to review lab resources and credentials.
 
-![](./Images/env01.png)
+![](./Images/new002.png)
 
 ## Utilizing the Split Window Feature
 
 Use the **Split Window** button in the top-right corner to open the lab guide in a separate window for easier navigation.
 
-![](./Images/splitwin01.png)
+![](./Images/new3.png)
 
 ## Managing Your Virtual Machine
 
@@ -101,7 +101,7 @@ Start, stop, or restart your virtual machine as needed from the **Resources** ta
 
 Adjust the zoom level using the **A↕ : 100%** icon located next to the timer.
 
-![](./Images/zoominout1.png)
+![](./Images/new1.png)
 
 ## Let's Get Started with Azure Portal
 
@@ -132,8 +132,8 @@ CloudLabs support is available 24/7 to assist learners and instructors.
 - **Email:** cloudlabs-support@spektrasystems.com  
 - **Live Chat:** https://cloudlabs.ai/labs-support  
 
-Now, click on **Next** from the lower right corner to move on to the next page. 
+Click **Next** to begin **Lab 01**.
 
-![](./Images/next.png)
+![](./Images/AI38.png)
 
 ### Happy Learning!!
