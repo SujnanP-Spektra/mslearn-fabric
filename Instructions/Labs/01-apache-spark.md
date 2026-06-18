@@ -2,6 +2,14 @@
 
 ### Estimated Duration: 100 Minutes
 
+## Lab Scenario 
+
+Now that your Microsoft Fabric trial environment is ready, you will begin a critical data engineering project for Contoso Retail.
+
+The executive team needs a multi-year performance review using three years of raw e-commerce sales data covering 2019, 2020, and 2021. Because these datasets span millions of rows, you need a scalable solution.
+
+In this exercise, you will create a centralized Lakehouse to store the raw 2019–2021 files. You will then use a Fabric Notebook and PySpark to load, clean, and aggregate this multi-year data, transforming raw transactions into meaningful insights for the business.
+
 ## Overview
 
 In this exercise, you will use Apache Spark within Microsoft Fabric to ingest, process, and analyze data using PySpark. You will begin by creating a lakehouse to store raw data files and then use notebooks to write and run Spark code for data exploration, transformation, and analysis. You will learn how to work with DataFrames, apply filtering and grouping operations, use Spark SQL for querying data, and visualize results using built-in tools and Python libraries like matplotlib and seaborn. This end-to-end lab provides a practical introduction to scalable data analytics in Microsoft Fabric.
@@ -64,9 +72,9 @@ In this task, you will create a lakehouse to organize and analyze your data file
 
 In this task, you will create a notebook to work with data in Apache Spark. Notebooks provide an interactive environment where you can write and run code in multiple languages, while also allowing you to add notes for documentation.
 
-1. From the left pane, click on **My workspace (1)**, then select the **fabric-<inject key="DeploymentID" enableCopy="false"/> (2)** workspace.  
-   
-    ![](./Images2/lab2-11-02.png)
+1. From the left pane, click on **fabric-<inject key="DeploymentID" enableCopy="false"/> workspace (1)**, then select the **fabric-<inject key="DeploymentID" enableCopy="false"/> (2)** workspace.  
+
+     ![](./Images2/fabric-workspace.png)
 
 1. In the **fabric-<inject key="DeploymentID" enableCopy="false"/>** workspace, click on **+ New item (1)**, search for **Notebook (2)** in the search bar, and then select **Notebook (3)** from the results.
 
@@ -84,7 +92,7 @@ In this task, you will create a notebook to work with data in Apache Spark. Note
 
 1. Select the checkbox next to **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/>** **(1)**, then click **Connect (2)** in the bottom-right corner.
 
-   **>Note**: If you see the **Add** button instead of the **Connect** button, kindly click on **Add** and proceed to the next step.
+   >**Note**: If you see the **Add** button instead of the **Connect** button, kindly click on **Add** and proceed to the next step.
 
    ![](./Images2/1/t2-3.png)
 
@@ -109,7 +117,11 @@ In this task, you will create a notebook to work with data in Apache Spark. Note
 
 In this task, you will load data into a dataframe to prepare it for analysis. Dataframes in Spark, similar to Pandas dataframes in Python, offer a structured way to manage and manipulate data organized in rows and columns.
 
-> **Note:** Spark supports multiple coding languages, including Scala, Java, and others. In this exercise, we will use *PySpark*, which is a Spark-optimized variant of Python. PySpark is one of the most commonly used languages on Spark and is the default language in Fabric notebooks.
+> **Note:** Spark supports multiple coding languages, including Scala, Java, and others. In this exercise, we will use *PySpark*, which is a Spark-optimized variant of Python. PySpark is one of the most commonly used languages on Spark and is the default language in Fabric notebooks. 
+
+> **Note:** If any notebook cell show **NameError issue** re-run the notebook code cells again from starting or check the skipped commands and execute them again. 
+
+![](./Images2/name-df-error-ex-1.png)
 
 1. With the notebook open, expand the **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/> (1)** under **Data items**, on the **Explorer** page, then expand **Files (2)**, select the **orders (3)** folder, click the **ellipsis (...) (4)** menu next to 2019.csv, and choose **Load data (5)** -> **Spark (6)**.
 
@@ -137,7 +149,7 @@ In this task, you will load data into a dataframe to prepare it for analysis. Da
 
     ![](./Images2/1/t3-5.png)
 
-1. The output displays the rows and columns from the 2019.csv file; however, note that the column headers are incorrect because the default code assumes the CSV includes headers, whereas this file contains data only, without header information.
+1. The output displays the rows and columns from the **2019.csv** file; however, note that the column headers are incorrect because the default code assumes the CSV includes headers, whereas this file contains data only, without header information.
 
 1. Modify the code to set the **header** option to **false**, as shown below:
 
@@ -217,7 +229,7 @@ In this task, you will load data into a dataframe to prepare it for analysis. Da
 
 In this task, you will explore data within a dataframe to gain insights and understand its structure. The dataframe object offers various functions for filtering, grouping, and manipulating the data it contains, facilitating effective analysis.
 
-### Filter a dataframe
+### Task 4.1: Filter a dataframe
 
 1. Use the **+ Code** icon located below the cell output to add a **new code** cell to the notebook, then enter the following code into it.
 
@@ -260,7 +272,7 @@ Note that you can chain multiple DataFrame functions together. Here, the **outpu
 
 In this task, you will aggregate and group data within a dataframe to summarize information and extract meaningful insights. This process involves applying functions to organize the data based on specific criteria, allowing for easier analysis and reporting.
 
-1. Add a **new code** cell below the current one, and enter the following code:
+1. Add a **new code cell** below the current one by hovering over the area below the cell and selecting **+ Code**. Then enter the following code:
 
     ```Python
    productSales = df.select("Item", "Quantity").groupBy("Item").sum()
@@ -272,7 +284,7 @@ In this task, you will aggregate and group data within a dataframe to summarize 
 
     ![](./Images2/1/t5-2.png)
 
-3. Add a **new code** cell below the current one, and enter the following code:
+3. Add a **new code cell** below the current one by hovering over the area below the cell and selecting **+ Code**. Then enter the following code:
 
     ```Python
    from pyspark.sql.functions import *
@@ -289,9 +301,9 @@ In this task, you will aggregate and group data within a dataframe to summarize 
 
 In this task, you will use Spark to transform data files into a desired format for analysis and processing. This involves ingesting data in specific structures and applying transformations, a common responsibility for data engineers, to prepare the data for downstream applications.
 
-### Use dataframe methods and functions to transform data
+### Task 6.1: Use dataframe methods and functions to transform data
 
-1. Add a **new code cell** below the current one in the notebook, and enter the following code:
+1. Add a **new code cell** below the current one by hovering over the area below the cell and selecting **+ Code**. Then enter the following code:
 
     ```Python
    from pyspark.sql.functions import *
@@ -323,7 +335,7 @@ In this task, you will use Spark to transform data files into a desired format f
 
     > **Tip:** See the [Spark dataframe documentation](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) to learn more about the methods of the Dataframe object.
 
-### Save the transformed data
+### Task 6.2: Save the transformed data
 
 1. Add a **new code** cell containing the following code to save the transformed DataFrame in Parquet format. This operation will overwrite any existing data at the specified location:
 
@@ -353,7 +365,7 @@ In this task, you will use Spark to transform data files into a desired format f
 
     ![](./Images2/1/t6-4a.png)
 
-### Save data in partitioned files
+### Task 6.3: Save data in partitioned files
 
 1. Add a **new code** cell and enter the following code to save the dataframe, partitioned by **Year** and **Month**.
 
@@ -390,14 +402,14 @@ In this task, you will use Spark to transform data files into a desired format f
    > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
    > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
- <validation step="ca80df5c-5a46-4057-bc33-616462f99925" />
+<validation step="ca80df5c-5a46-4057-bc33-616462f99925" />
 
 
 ## Task 7: Work with tables and SQL
 
 In this task, you will work with tables and SQL in Spark to combine the flexibility of data lakes with the structured querying capabilities of relational databases. You will create a managed Delta Lake table from a dataframe, explore it using SQL queries both embedded in PySpark code and as standalone SQL cells, and leverage the Spark metastore to organize and query your data efficiently, enabling powerful data lakehouse capabilities within Fabric.
 
-### Create a table
+### Task 7.1: Create a table
 
 Tables in a Spark metastore are relational abstractions over files in the data lake. Tables can be *managed* (in which case the files are managed by the metastore) or *external* (in which case the table references a file location in the data lake that you manage independently of the metastore).
 
@@ -440,7 +452,7 @@ Tables in a Spark metastore are relational abstractions over files in the data l
 
     ![](./Images2/1/t7-5.png)
 
-### Run SQL code in a cell
+### Task 7.2: Run SQL code in a cell
 
 While it's useful to be able to embed SQL statements into a cell containing PySpark code, data analysts often just want to work directly in SQL.
 
@@ -465,13 +477,13 @@ While it's useful to be able to embed SQL statements into a cell containing PySp
 
       ![](./Images2/1/t7-11.png)
 
-    > **Note:** For more information about Spark SQL and dataframes, see the [Spark SQL documentation](https://spark.apache.org/docs/2.2.0/sql-programming-guide.html).
+        > **Note:** For more information about Spark SQL and dataframes, see the [Spark SQL documentation](https://spark.apache.org/docs/2.2.0/sql-programming-guide.html).
 
 ## Task 8: Visualize data with Spark
 
 In this task, you will visualize data using Spark to enhance understanding and insights through graphical representation. While Fabric notebooks offer a basic chart view for data from dataframes or Spark SQL queries, you can utilize Python graphics libraries like **matplotlib** and **seaborn** for more comprehensive and customized charting.
 
-### View results as a chart
+### Task 8.1: View results as a chart
 
 1. Add a **new code** cell to the notebook and enter the following code:
 
@@ -505,7 +517,7 @@ In this task, you will visualize data using Spark to enhance understanding and i
 
     ![](./Images2/1/t8-6.png)
 
-### Get started with matplotlib
+### Task 8.2: Get started with matplotlib
 
 1. Add a **new code** cell to the notebook and enter the following code:
 
@@ -641,7 +653,7 @@ In this task, you will visualize data using Spark to enhance understanding and i
 
     > **Note:** To learn more about plotting with matplotlib, see the [matplotlib documentation](https://matplotlib.org/).
 
-### Use the seaborn library
+### Task 8.3: Use the seaborn library
 
 While **matplotlib** enables you to create complex charts of multiple types, it can require some complex code to achieve the best results. For this reason, over the years, many new libraries have been built on the basis of matplotlib to abstract its complexity and enhance its capabilities. One such library is **seaborn**.
 
@@ -713,7 +725,7 @@ In this task, you will save your notebook with a meaningful name to preserve you
 
      ![](./Images2/lab2-11-11.png)
 
-     > **Note:** The stop session icon is present next to the **Start Session** option.
+     > **Note:** The stop session icon is present next to the **Standard Session** option.
 
 ## Summary
 
