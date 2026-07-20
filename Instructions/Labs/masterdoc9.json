@@ -1,0 +1,22 @@
+[{
+  "Name": "Microsoft Fabric",
+  "Language": "English",
+  "Files": [
+    {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/refs/heads/guidedlabs/Instructions/Labs/GS09.md",
+      "Order": 1
+    },
+    {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/refs/heads/guidedlabs/Instructions/Labs/exercise-1-fabric-iq-and-code-generation-sprints.md",
+      "Order": 2
+    },
+    {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/refs/heads/guidedlabs/Instructions/Labs/exercise-2-fabric-data-agent.md",
+      "Order": 3
+    },
+        {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/refs/heads/guidedlabs/Instructions/Labs/exercise-3-gpu-accelerated-data-warehouse.md",
+      "Order": 4
+    }
+  ]
+}]
