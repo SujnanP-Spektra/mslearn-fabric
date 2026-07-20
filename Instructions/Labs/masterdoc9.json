@@ -7,12 +7,16 @@
       "Order": 1
     },
     {
-      "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/refs/heads/guidedlabs/Instructions/Labs/commonlab7.md",
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/refs/heads/guidedlabs/Instructions/Labs/exercise-1-fabric-iq-and-code-generation-sprints.md",
       "Order": 2
     },
     {
-      "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/refs/heads/guidedlabs/Instructions/Labs/06-dataflows-gen2-V2.md",
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/refs/heads/guidedlabs/Instructions/Labs/exercise-2-fabric-data-agent.md",
       "Order": 3
+    },
+        {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/refs/heads/guidedlabs/Instructions/Labs/exercise-3-gpu-accelerated-data-warehouse.md",
+      "Order": 4
     }
   ]
 }]
