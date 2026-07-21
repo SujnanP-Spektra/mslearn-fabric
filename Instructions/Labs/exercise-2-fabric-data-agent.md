@@ -28,11 +28,7 @@ In this task, you will create a new lakehouse in the shared workspace and upload
     - **Username:** `<inject key="AzureAdUserEmail"></inject>`
     - **Password:** `<inject key="AzureAdUserPassword"></inject>`
 
-1. From the left pane, select the **fabric-<inject key="DeploymentID" enableCopy="false"/>** workspace.
-
-    ![](./Images/IQ117.png)
-
-1. In the **fabric-<inject key="DeploymentID" enableCopy="false"/>** workspace, click on **+ New item (3)** to create a new lakehouse.
+1. From the left pane, select the **fabric-<inject key="DeploymentID" enableCopy="false"/>** workspace, click on **+ New item (3)** to create a new lakehouse.
 
     ![](./Images/IQ71.png)
 
@@ -40,7 +36,7 @@ In this task, you will create a new lakehouse in the shared workspace and upload
 
     ![](./Images/IQ72.png)
 
-1. In the **New lakehouse** window, enter the **Name** as **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)** and make sure to **uncheck the Lakehouse schemas box (2)** — it is checked by default, then click on **Create (3)**.
+1. In the **New lakehouse** window, enter the **Name** as **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)** and make sure to **uncheck the Lakehouse schemas box (2)** it is checked by default, then click on **Create (3)**.
 
     ![](./Images/lhcreate.png)
 
@@ -48,7 +44,7 @@ In this task, you will create a new lakehouse in the shared workspace and upload
 
     ![](./Images/IQ74.png)
 
-1. In the **Upload files** section, click on the **folder** icon.
+1. In the **Upload files** section, click on the **folder (1)** icon.
 
     ![](./Images/IQ75.png)
 
@@ -76,13 +72,17 @@ In this task, you will create a new lakehouse in the shared workspace and upload
 
 In this task, you will create a notebook, attach it to the **Lakehouse_<inject key="DeploymentID" enableCopy="false"/>** lakehouse, and load the churn data into a pandas DataFrame ready for model training.
 
-1. In the **fabric-<inject key="DeploymentID" enableCopy="false"/>** workspace, click on **+ New item (1)**, search for **Notebook (2)**, and select **Notebook (3)** from the result.
+1. Navigate to your workspace **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)**, click on **+ New item (2)** to create a new warehouse.
+
+    ![](./Images/IQ71.png)
+
+1. In the search box, search **Notebook (1)** and select **Notebook (2)** from the list.
 
     ![](./Images/IQ80.png)
 
-1. In the **New Notebook** window, keep the default notebook **Name (1)** unchanged, and then click **Create (2)** to continue.
+1. On the **New Notebook** page, enter a **Name (1)**, verify that the correct **Location (2)** is selected, and then select **Create (3)**.
 
-    ![](./Images/IQ81.png)
+    ![](./Images/IQ081.png)
 
 1. After a few seconds, a new notebook containing a single *cell* will open. Notebooks are made up of one or more cells that can contain *code* or *markdown* (formatted text).
 
@@ -100,9 +100,9 @@ In this task, you will create a notebook, attach it to the **Lakehouse_<inject k
 
 1. In the Explorer pane, click the **Add data items (1)** drop-down and select **From OneLake catalog (2)**.
 
-    ![](./Images/CU-adddataitems.png)
+    ![](./Images/IQ83.png)
 
-1. Select the lakehouse named **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)** and click **Connect (2)**.
+1. Select the lakehouse named **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)** and click **Add (2)**.
 
     ![](./Images/IQ84.png)
 
@@ -141,9 +141,9 @@ In this task, you will create a notebook, attach it to the **Lakehouse_<inject k
 
 ## Task 3: Train a machine learning model
 
-In this task, you will train two classification models — Logistic Regression and Decision Tree — to predict customer churn, tracking both with MLflow.
+In this task, you will train two classification models Logistic Regression and Decision Tree to predict customer churn, tracking both with MLflow.
 
-1. Use the **+ Code (1)** icon below the cell output to add a new code cell to the notebook, and enter the following **code (2)** in it:
+1. Enter the following **code (1)** in it:
 
     ```python
     from sklearn.model_selection import train_test_split
@@ -155,7 +155,7 @@ In this task, you will train two classification models — Logistic Regression a
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30, random_state=0)
     ```
 
-1. **Run (3)** the code cell you added, and note you're omitting 'CustomerID' from the dataset and splitting the data into a training and test dataset.
+1. **Run (2)** the code cell you added, and note you're omitting 'CustomerID' from the dataset and splitting the data into a training and test dataset.
 
     ![](./Images/IQ107.png)
 
@@ -228,7 +228,7 @@ In this task, you will explore the MLflow experiment runs, compare model perform
 
     ![Screenshot of the plotted evaluation metrics.](./Images/IQ116.png)
 
-1. In the left pane, navigate to your **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)**. You will see the **experiment-churn (2)** Experiment created.
+1. In the left pane, navigate to your **fabric-<inject key="DeploymentID" enableCopy="false"/> **. You will see the **experiment-churn** Experiment created.
 
     ![](./Images/IQ117.png)
 
@@ -238,31 +238,31 @@ In this task, you will explore the MLflow experiment runs, compare model perform
 
     > **Note:** If you don't see any logged experiment runs, refresh the page.
 
-1. Select the **View (1)** tab and ensure the **List (2)** layout is selected. The **Runs (3)** tab shows the runs logged in this experiment.
+1. Select the **View** tab and ensure the **List** layout is selected. Under the **Runs** tab, select the latest experiment run to open its details.
 
     ![](./Images/IQ123.png)
 
 1. Select the **checkboxes** next to your latest **LogisticRegression** run **(1)** and your latest **DecisionTreeClassifier** run **(2)**. The **Metric comparison** pane appears below the run list.
 
-    > **Note:** If you re-ran any training cells, the experiment contains more than two runs. Compare the latest run of each estimator — you can identify them by the **training_accuracy_score** values or by opening a run to check its **estimator** parameter.
+    > **Note:** If you re-ran any training cells, the experiment contains more than two runs. Compare the latest run of each estimator you can identify them by the **training_accuracy_score** values or by opening a run to check its **estimator** parameter.
 
     ![](./Images/IQ119.png)
 
-1. In the **Metric comparison** pane, select the **Performance (1)** tab and review the **training_accuracy_score** and **training_f1_score (2)** charts comparing the two runs. You can use the **&#128393; Edit** icon on a chart to customize the visualization — for example, a bar chart by estimator name.
+1. On the **Performance** tab, select the **Edit** icon to customize the chart.
 
     > By comparing accuracy per logged estimator, you can review which algorithm resulted in a better model.
 
     ![](./Images/IQ121.png)
 
-1. Click the **run name (1)** of the run with the highest training accuracy (typically your latest **DecisionTreeClassifier** run) to open its run details view, which shows the run's properties and metrics.
+1. In the **Personalize** pane, set the **Visualization type (1)** to **Bar**, set the **X-axis (2)** to **estimator_name**, and then select **Replace (3)**.
 
-    ![](./Images/IQ124.png)
+    ![](./Images/IQ122.png)
 
 1. In the run details view, locate the **Save run as an ML model** card and click **Save (1)**.
 
-    ![](./Images/CU-rundetails.png)
+    ![](./Images/IQ124.png)
 
-    > **Note:** The **Save as ML model** button in the run list toolbar stays unavailable until a run is opened — always save from the run details view as described here.
+    > **Note:** The **Save as ML model** button in the run list toolbar stays unavailable until a run is opened always save from the run details view as described here.
 
 1. In the **Save as ML model** dialog, keep **Create a new ML model (1)** selected, keep the folder **model (2)**, enter the **ML model name** as **model-churn (3)**, and select **Save (4)**.
 
@@ -271,8 +271,6 @@ In this task, you will explore the MLflow experiment runs, compare model perform
 1. Select **View ML model** in the notification that appears at the top right of your screen when the model is created.
 
     ![](./Images/IQ126.png)
-
-    ![](./Images/CU-modelchurn.png)
 
     >**Note:** The model, the experiment, and the experiment run are linked, allowing you to review how the model is trained.
 
@@ -287,9 +285,9 @@ In this task, you will explore the MLflow experiment runs, compare model perform
 
 In this task, you will reload the registered **model-churn** model, score it against the full churn dataset to generate predictions, and save the results as a managed Delta table that the Fabric Data Agent will query in Task 6.
 
-1. Navigate back to the notebook in the **fabric-<inject key="DeploymentID" enableCopy="false"/>** workspace.
+1. Select **Workspaces (1)** from the left navigation pane, and then select the **fabric-<inject key="DeploymentID" enableCopy="false" /> (2)** workspace.
 
-    ![](./Images/nbslct.png)
+    ![](./Images/IQ001.png)
 
 1. Add a new code cell, enter the following, and run it to reload the churn data into the **df** DataFrame:
 
@@ -298,7 +296,7 @@ In this task, you will reload the registered **model-churn** model, score it aga
     df = pd.read_csv("/lakehouse/default/" + "Files/churn.csv")
     ```
 
-    > **Note:** While you were exploring the experiment and model in Task 4, the notebook's Spark session may have expired and restarted. A new session does not retain variables from earlier cells, so **df** must be reloaded before scoring — running this cell is required even if the session appears unchanged.
+    > **Note:** While you were exploring the experiment and model in Task 4, the notebook's Spark session may have expired and restarted. A new session does not retain variables from earlier cells, so **df** must be reloaded before scoring running this cell is required even if the session appears unchanged.
 
 1. Add a new code cell, enter the following to reload the registered model from MLflow, and run it:
 
@@ -313,6 +311,8 @@ In this task, you will reload the registered **model-churn** model, score it aga
     > **Note:** If the model is not found, verify that the **Save** step in Task 4 completed successfully and that the registered version is **1**.
 
     ![](./Images/IQ127.png)
+
+     ![](./Images/IQ128.png)
 
 1. Add a new code cell, enter the following to score the full dataset, and run it:
 
@@ -332,6 +332,8 @@ In this task, you will reload the registered **model-churn** model, score it aga
 
     ![](./Images/IQ129.png)
 
+     ![](./Images/IQ130.png)
+
 1. Add a new code cell, enter the following to convert the scored pandas DataFrame to a Spark DataFrame and save it as a managed Delta table, then run it:
 
     ```python
@@ -350,11 +352,11 @@ In this task, you will reload the registered **model-churn** model, score it aga
 
 1. In the notebook menu bar, click the ⚙️ **Settings (1)** icon to view the notebook settings, and set the **Name** of the notebook to **Train and compare models notebook (2)**, then close the settings pane.
 
+     ![](./Images/IQ99.png)
+
     ![](./Images/IQ133.png)
 
 1. On the notebook menu, select &#9645;**Stop session** to end the Spark session.
-
-    ![](./Images/IQ101.png)
 
     >**Note:** If you can't see the **Stop Session** option, it means the Spark session has already ended.
 
@@ -364,7 +366,11 @@ In this task, you will create a Fabric Data Agent grounded in the **churn_predic
 
 > **Note:** Fabric Data Agent requires a paid Fabric capacity (F2 or higher) and the Copilot and cross-geo Azure OpenAI tenant settings you enabled in Exercise 1, Task 4 (plus **Users can create and share Data agent item types (preview)** where that setting is present in your tenant). If the Data agent item type does not appear, wait a few minutes for the tenant settings to propagate and refresh the browser.
 
-1. In the **fabric-<inject key="DeploymentID" enableCopy="false"/>** workspace, click on **+ New item (1)**, search for **Data agent (2)**, and select it from the results **(3)**.
+1. Confirm that the new workspace has opened successfully **(1)** and verify that the **+ New item (2)** option is available.
+
+    ![](./Images/IQ71.png)
+
+1. In the **New item** pane, search for **Data agent (1)** and then select **Data agent (2)**.
 
     ![](./Images/IQ134.png)
 
@@ -380,7 +386,7 @@ In this task, you will create a Fabric Data Agent grounded in the **churn_predic
 
     ![](./Images/IQ137.png)
 
-1. Select **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)** and add it as the agent's data source.
+1. Select **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)** and **Add (2)** it as the agent's data source.
 
     ![](./Images/IQ84.png)
 
@@ -403,7 +409,7 @@ In this task, you will create a Fabric Data Agent grounded in the **churn_predic
 
 1. In the **Explorer** pane, select the **Setup (1)** tab and open the **Example queries** section for the lakehouse data source, then click **+ Add example (2)**.
 
-    ![](./Images/CU-setup-examples.png)
+    ![](./Images/IQ140.png)
 
 1. Enter the following first example — a **Question (1)** with its matching **SQL query (2)** — and save it **(3)**:
 
@@ -421,7 +427,7 @@ In this task, you will create a Fabric Data Agent grounded in the **churn_predic
         WHERE ChurnPrediction = 1;
         ```
 
-    ![](./Images/IQ141.png)
+        ![](./Images/IQ141.png)
 
 1. Click **+ Add example (1)** again, enter the following second example **(2)**, and save it **(3)**:
 
@@ -439,17 +445,13 @@ In this task, you will create a Fabric Data Agent grounded in the **churn_predic
         ORDER BY ChurnProbability DESC;
         ```
 
-    ![](./Images/IQ142.png)
+        ![](./Images/IQ142.png)
 
-1. In the toolbar, click **Publish**. In the **Publish data agent** dialog, enter the following **Description of purpose and capabilities (1)**, leave the **Also publish to the Agent Store in Microsoft 365 Copilot** toggle **Off (2)**, and click **Publish (3)**:
+1. In the toolbar, click **Publish**.
 
-    ```
-    Answers natural-language questions about predicted customer churn using the churn_predictions table, including churn counts, probabilities, and high-risk customer insights.
-    ```
+     ![](./Images/IQ144.png)
 
-    ![](./Images/IQ144.png)
-
-1. In the chat pane, type the following question **(1)** and press **Enter (2)**:
+1. In the chat pane, type the following question and press **Enter**:
 
     ```
     How many customers are predicted to churn?
@@ -459,17 +461,15 @@ In this task, you will create a Fabric Data Agent grounded in the **churn_predic
 
 1. Review the agent's answer. Expand the agent's **reasoning steps (1)** to confirm the SQL it ran against the **churn_predictions** table matches your expectations.
 
-    ![](./Images/IQ145.png)
-
 1. Ask a second question in the chat pane:
 
     ```
     What is the average churn probability for customers who are predicted to churn?
     ```
 
-1. Review the response and confirm the agent queries the **ChurnProbability** and **ChurnPrediction** columns from **churn_predictions** correctly.
-
     ![](./Images/IQ146.png)
+
+1. Review the response and confirm the agent queries the **ChurnProbability** and **ChurnPrediction** columns from **churn_predictions** correctly.
 
 1. Ask a third question in the chat pane:
 
@@ -480,14 +480,6 @@ In this task, you will create a Fabric Data Agent grounded in the **churn_predic
 1. Review the response and confirm the agent groups by the **age** column from the **churn_predictions** table.
 
     ![](./Images/IQ147.png)
-
-> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-> - Navigate to the Lab Validation Page from the upper right corner in the lab guide section.
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
-> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
-
-<validation step="9f1e2d3c-4b5a-4e6f-8c7d-000000000010" />
 
 ## Summary
 
