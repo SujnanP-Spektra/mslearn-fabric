@@ -66,7 +66,7 @@ In this task, you will create a new lakehouse in the shared workspace and upload
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
-<validation step="9f1e2d3c-4b5a-4e6f-8c7d-000000000008" />
+<validation step="80ed8398-d658-4ae5-a73e-b1b9a08c69e2" />
 
 ## Task 2: Create a notebook and load data into a dataframe
 
@@ -273,13 +273,6 @@ In this task, you will explore the MLflow experiment runs, compare model perform
     ![](./Images/IQ126.png)
 
     >**Note:** The model, the experiment, and the experiment run are linked, allowing you to review how the model is trained.
-
-> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
-> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
-
-<validation step="9f1e2d3c-4b5a-4e6f-8c7d-000000000009" />
 
 ## Task 5: Score the model and save predictions to the lakehouse
 

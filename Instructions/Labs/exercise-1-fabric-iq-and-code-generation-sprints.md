@@ -106,7 +106,7 @@ In this task, you will assign yourself the Fabric Administrator role in Microsof
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
-<validation step="9f1e2d3c-4b5a-4e6f-8c7d-000000000001" />
+<validation step="d8fedb37-4d03-4378-b6e2-10fd6126e2ef" />
 
 ## Task 2: Create and populate the data warehouse
 
@@ -200,14 +200,6 @@ In this task, you will create a Fabric Data Warehouse and populate it with a ret
         ![01](./Images/IQ12.png)
 
         > **Note:** If the schema takes a while to load, just refresh the browser page.
-
-> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-> - Navigate to the Lab Validation Page from the upper right corner in the lab guide section.
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
-> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
-
-<validation step="9f1e2d3c-4b5a-4e6f-8c7d-000000000002" />
 
 ## Task 3: Create the semantic model and define relationships
 
@@ -342,14 +334,6 @@ In this task, you will enable the tenant settings required for the Fabric IQ pre
 
     > **Note:** After you click **Create**, a **Generating Ontology** screen appears while Fabric builds the entity types and processes the data bindings. This one-time setup typically completes in a few minutes wait on the page, it updates automatically when generation finishes.
 
-> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-> - Navigate to the Lab Validation Page from the upper right corner in the lab guide section.
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
-> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
-
-<validation step="9f1e2d3c-4b5a-4e6f-8c7d-000000000003" />
-
 ## Task 5: Run an IQ-guided DAX sprint
 
 In this task, you will open the **Data Warehouse-<inject key="DeploymentID" enableCopy="false"/>** semantic model in DAX query view and use Copilot to generate and refine three DAX measures against the retail star schema. Copilot in DAX query view is grounded in the semantic model you built in Task 3 the tables, columns, and relationships you defined directly shape the quality of the generated DAX, which is why a well-modeled schema matters before bringing AI into the loop.
@@ -454,14 +438,6 @@ In this task, you will open the **Data Warehouse-<inject key="DeploymentID" enab
 
     > **Note:** The banner stating *DAX queries are discarded on close* refers only to the query text in this view measures applied through **Update model with changes** are saved permanently to the semantic model.
 
-> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-> - Navigate to the Lab Validation Page from the upper right corner in the lab guide section.
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
-> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
-
-<validation step="9f1e2d3c-4b5a-4e6f-8c7d-000000000004" />
-
 ## Task 6: Create a lakehouse and upload files
 
 In this task, you will create a lakehouse to store the sales order data and upload the orders folder from the lab files.
@@ -502,14 +478,6 @@ In this task, you will create a lakehouse to store the sales order data and uplo
 1. After uploading, expand **Files (1)** in the Explorer pane, select the **orders (2)** folder, and verify that the CSV files are listed.
 
     ![](./Images/IQ79.png)
-
-> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-> - Navigate to the Lab Validation Page from the upper right corner in the lab guide section.
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
-> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
-
-<validation step="9f1e2d3c-4b5a-4e6f-8c7d-000000000006" />
 
 ## Task 7: Create a notebook
 
@@ -694,15 +662,6 @@ In this task, you will use notebook Copilot to run a six-prompt IQ-guided Spark 
     ```
 
 1. In the **Explorer** pane, click the **ellipsis (...) (1)** menu next to **Tables**, select **Refresh (2)**, and verify that **SalesRevenueSummary (3)** now appears.
-
-
-    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-    > - Navigate to the Lab Validation Page from the upper right corner in the lab guide section.
-    > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
-    > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-    > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
-
-    <validation step="9f1e2d3c-4b5a-4e6f-8c7d-000000000007" />
 
 1. Enter the following **Prompt 5** in the Copilot pane:
 
