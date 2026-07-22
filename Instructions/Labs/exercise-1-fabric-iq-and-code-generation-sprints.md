@@ -57,8 +57,8 @@ In this task, you will assign yourself the Fabric Administrator role in Microsof
    https://app.fabric.microsoft.com
    ```
 
-    - **Username:** `<inject key="AzureAdUserEmail"></inject>`
-    - **Password:** `<inject key="AzureAdUserPassword"></inject>`
+    - **Email/Username:** <inject key="AzureAdUserEmail" enableCopy="true"/>
+    - **Password:** <inject key="AzureAdUserPassword" enableCopy="true"/>
 
    >**Note**: In case a sign-up page asks for a phone number, you can enter a dummy phone number to proceed.
 
