@@ -96,7 +96,7 @@ In this task, you will assign yourself the Fabric Administrator role in Microsof
 
     > **Note:** The pre-provisioned **fabric<inject key="DeploymentID" enableCopy="false"/>** capacity is a paid Fabric (F) SKU. The Copilot, ontology, and Data Agent features used in this module require a paid F2 or higher capacity, so make sure your workspace is assigned to this capacity and not to a trial capacity.
 
-1. Confirm the new workspace opens and that **+ New item** is available.
+1. Confirm that the new workspace has opened successfully **(1)** and verify that the **+ New item (2)** option is available.
 
     ![](./Images/IQ71.png)
 
@@ -106,7 +106,7 @@ In this task, you will assign yourself the Fabric Administrator role in Microsof
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
-<validation step="9f1e2d3c-4b5a-4e6f-8c7d-000000000001" />
+<validation step="d8fedb37-4d03-4378-b6e2-10fd6126e2ef" />
 
 ## Task 2: Create and populate the data warehouse
 
@@ -201,14 +201,6 @@ In this task, you will create a Fabric Data Warehouse and populate it with a ret
 
         > **Note:** If the schema takes a while to load, just refresh the browser page.
 
-> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-> - Navigate to the Lab Validation Page from the upper right corner in the lab guide section.
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
-> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
-
-<validation step="9f1e2d3c-4b5a-4e6f-8c7d-000000000002" />
-
 ## Task 3: Create the semantic model and define relationships
 
 In this task, you will create a semantic model from the data warehouse tables, switch to editing mode, and define the three many-to-one relationships required for the ontology generation in Task 4 and the IQ-guided DAX sprint in Task 5.
@@ -270,18 +262,15 @@ In this task, you will enable the tenant settings required for the Fabric IQ pre
 
     ![](./Images/IQ15.png)
 
-1. In the Admin portal, select **Tenant settings** from the left-hand navigation pane.
+1. In the **Admin portal**, select **Tenant settings (1)**. Search for **Copilot (2)** and expand **Copilot and Azure OpenAI Service (3)**. Verify that **Users can use Copilot and other features powered by Azure OpenAI (4)** is **Enabled (5)**. If you make any changes, select **Apply (6)**.
 
     ![](./Images/IQ48.png)
 
-1. In the tenant settings search box, search for **Copilot (1)**. Under the **Copilot and Azure OpenAI Service** group, expand **Users can use Copilot and other features powered by Azure OpenAI (2)** and confirm it is **Enabled** for the entire organization — it is enabled by default for tenants with paid Fabric capacities. If it is disabled, enable it and click **Apply (3)**.
-
-
-1. In the same **Copilot and Azure OpenAI Service** group, expand **Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance (1)** and confirm it is **Enabled (2)**. If it is disabled, enable it and click **Apply (3)**.
+1. In the same **Copilot and Azure OpenAI Service** group, expand **Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance** and confirm it is **Enabled (1)**. If it is disabled, enable it and click **Apply (2)**.
 
     ![](./Images/IQ47.png)
 
-1. Repeat for **Data sent to Azure OpenAI can be stored outside your capacity's geographic region, compliance boundary, or national cloud instance (1)** — confirm it is **Enabled (2)**, and if disabled, enable it and click **Apply (3)**.
+1. Repeat for **Data sent to Azure OpenAI can be stored outside your capacity's geographic region, compliance boundary, or national cloud instance (1)** confirm it is **Enabled (2)**, and if disabled, enable it and click **Apply (3)**.
 
     ![](./Images/IQ50.png)
 
@@ -291,23 +280,23 @@ In this task, you will enable the tenant settings required for the Fabric IQ pre
 
     ![](./Images/IQ51.png)
 
-1. Search for **Graph (1)** and check whether a Graph item setting (for example, **User can create Graph (preview)**) is listed. If it appears, expand it **(2)**, set it to **Enabled**, and click **Apply (3)**. If no Graph item setting is listed, skip this step — Microsoft has consolidated this setting in recent tenant settings updates, and it is only used by the ontology's optional graph exploration feature. Nothing in this lab depends on it.
-
-1. Search for **Data agent (1)** and check whether **Users can create and share Data agent item types (preview)** is listed. If it appears, expand it **(2)**, set it to **Enabled**, and click **Apply (3)**. If it is not listed, skip this step — in tenants with the updated tenant settings experience, Data agent creation is governed by the Copilot and Azure OpenAI settings you enabled earlier in this task. You can confirm availability later by searching for **Data agent** under **+ New item** in the workspace.
-
 1. Search for **XMLA (1)**, expand **Allow XMLA endpoints and Analyze in Excel with on-premises semantic models (2)**, and confirm the toggle is **Enabled (3)**. If it is disabled, enable it and click **Apply (4)**.
 
-    ![](./Images/CU-xmla.png)
+    ![](./Images/IQ52.png)
 
     > **Note:** The XMLA endpoint setting is required to generate an ontology from a semantic model.
 
     > **Important:** Tenant settings can take up to one hour to take effect, although changes are usually applied within a few minutes. If an item type or Copilot feature does not appear immediately in the following steps, wait a few minutes, refresh the browser, and try again.
 
-1. Return to the **fabric-<inject key="DeploymentID" enableCopy="false"/>** workspace and click **+ New item**. In the **New item** panel, search for **Ontology (1)** and confirm that **Ontology (preview) (2)** now appears in the results. Close the **New item** panel without creating the item — you will generate the ontology directly from the semantic model in the next step.
+1. Navigate to your workspace **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)**, click on **+ New item (2)** to create a new warehouse.
 
-    ![](./Images/CU-newitem-ontology.png)
+    ![](./Images/IQ71.png)
 
-1. Open the **Data Warehouse-<inject key="DeploymentID" enableCopy="false"/> (1)** semantic model, and from the ribbon select **Generate Ontology (2)**.
+1. In the **New item** panel, search for **Ontology (1)** and confirm that **Ontology (preview) (2)** now appears in the results. Close the **New item** panel without creating the item you will generate the ontology directly from the semantic model in the next step.
+
+    ![](./Images/IQ53.png)
+
+1. Naviagte back to **Data Warehouse-<inject key="DeploymentID" enableCopy="false"/> (1)** semantic model, and from the ribbon select **Generate Ontology (2)**.
 
     ![](./Images/IQ55.png)
 
@@ -319,49 +308,41 @@ In this task, you will enable the tenant settings required for the Fabric IQ pre
 
 1. In the **New Ontology** dialog, enter the name **DWInsightsOntology (1)**, verify the **Location** is set to the **fabric-<inject key="DeploymentID" enableCopy="false"/> (2)** workspace, and click **Create (3)**.
 
-    ![](./Images/IQ54.png)
+    ![](./Images/IQ054.png)
 
-    > **Important:** Do not include spaces in the ontology name — item creation fails with a generic *An error occurred* message if the name contains spaces. If you see this error, correct the name and select **Create** again.
+    > **Important:** Do not include spaces in the ontology name item creation fails with a generic *An error occurred* message if the name contains spaces. If you see this error, correct the name and select **Create** again.
 
-1. After generation completes, the ontology editor opens. In the **Explorer** pane, expand **Entity Types (1)** and confirm the four entity types generated from your semantic model are listed — **DimProduct**, **DimCustomer**, **DimDate**, and **FactSalesOrder**.
+1. After generation completes, the ontology editor opens. In the **Explorer** pane, expand **Entity Types (1)** and confirm the four entity types generated from your semantic model are listed **DimProduct**, **DimCustomer**, **DimDate**, and **FactSalesOrder**.
 
-    ![](./Images/CU-ontology-entities.png)
+    ![](./Images/IQ45.png)
 
-1. Select **DimCustomer (1)** from the entity type list. The graph canvas displays the entity and its connections — confirm the **FactSalesOrder_has_DimCustomer (2)** relationship appears, showing that the relationship you defined in Task 3 carried through into the ontology. Selecting **DimProduct** or **DimDate** shows their relationships to **FactSalesOrder** in the same way.
+1. Select **DimCustomer (1)** from the entity type list. The graph canvas displays the entity and its connections confirm the **FactSalesOrder_has_DimCustomer (2)** relationship appears, showing that the relationship you defined in Task 3 carried through into the ontology. Selecting **DimProduct** or **DimDate** shows their relationships to **FactSalesOrder** in the same way.
 
     ![](./Images/CU-ontology-graph.png)
 
-    > **Note:** Selecting an entity type also surfaces the **+ Add relationship** and **View Entity Type details** options in the toolbar. These allow you to extend the ontology manually — no changes are needed for this lab.
+    > **Note:** Selecting an entity type also surfaces the **+ Add relationship** and **View Entity Type details** options in the toolbar. These allow you to extend the ontology manually no changes are needed for this lab.
 
 1. The ontology editor saves your ontology automatically as it is created. If a **Publish** or **Save** option is shown in the toolbar of your editor version, select it to confirm the changes.
 
 1. Navigate back to the **fabric-<inject key="DeploymentID" enableCopy="false"/>** workspace and confirm that **DWInsightsOntology (1)** now appears in the workspace item list.
 
-    > **Note:** The ontology automatically creates supporting items in the workspace — a graph item and one or more lakehouses prefixed with **DWInsightsOntology_**. These store the ontology's data bindings. Do not delete or modify them.
+    > **Note:** The ontology automatically creates supporting items in the workspace a graph item and one or more lakehouses prefixed with **DWInsightsOntology_**. These store the ontology's data bindings. Do not delete or modify them.
 
     ![](./Images/IQ117.png)
 
     ![](./Images/IQ57.png)
 
-    > **Note:** After you click **Create**, a **Generating Ontology** screen appears while Fabric builds the entity types and processes the data bindings. This one-time setup typically completes in a few minutes — wait on the page, it updates automatically when generation finishes.
-
-> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-> - Navigate to the Lab Validation Page from the upper right corner in the lab guide section.
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
-> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
-
-<validation step="9f1e2d3c-4b5a-4e6f-8c7d-000000000003" />
+    > **Note:** After you click **Create**, a **Generating Ontology** screen appears while Fabric builds the entity types and processes the data bindings. This one-time setup typically completes in a few minutes wait on the page, it updates automatically when generation finishes.
 
 ## Task 5: Run an IQ-guided DAX sprint
 
-In this task, you will open the **Data Warehouse-<inject key="DeploymentID" enableCopy="false"/>** semantic model in DAX query view and use Copilot to generate and refine three DAX measures against the retail star schema. Copilot in DAX query view is grounded in the semantic model you built in Task 3 — the tables, columns, and relationships you defined directly shape the quality of the generated DAX, which is why a well-modeled schema matters before bringing AI into the loop.
+In this task, you will open the **Data Warehouse-<inject key="DeploymentID" enableCopy="false"/>** semantic model in DAX query view and use Copilot to generate and refine three DAX measures against the retail star schema. Copilot in DAX query view is grounded in the semantic model you built in Task 3 the tables, columns, and relationships you defined directly shape the quality of the generated DAX, which is why a well-modeled schema matters before bringing AI into the loop.
 
 > **Note:** Copilot requires the workspace to be assigned to a paid Fabric capacity (F2 or higher) and the Copilot tenant settings you enabled in Task 4. If the Copilot pane is unavailable, verify the workspace capacity assignment from Task 1, wait a few minutes for the tenant settings to propagate, and refresh the browser.
 
-1. In the **fabric-<inject key="DeploymentID" enableCopy="false"/>** workspace, open the **Data Warehouse-<inject key="DeploymentID" enableCopy="false"/>** semantic model.
+1. In the **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)** workspace, open the **Data Warehouse-<inject key="DeploymentID" enableCopy="false"/> (2)** semantic model.
 
-    ![](./Images/IQ117.png)
+    ![](./Images/IQ150.png)
 
 1. The semantic model opens in the model editing view, showing the four tables and their relationships. At the bottom-left of the window, switch from **Model view** to **DAX query view (1)**.
 
@@ -400,8 +381,8 @@ In this task, you will open the **Data Warehouse-<inject key="DeploymentID" enab
 
 1. Wait for Copilot to generate the query. Before running anything, review the generated DAX carefully and check the following:
 
-    - Are the table names real tables from your model — **FactSalesOrder**, **DimProduct**, **DimDate**?
-    - Are the column names real columns — **SalesTotal**, **Quantity**, **Category**, **MonthName**?
+    - Are the table names real tables from your model **FactSalesOrder**, **DimProduct**, **DimDate**?
+    - Are the column names real columns **SalesTotal**, **Quantity**, **Category**, **MonthName**?
     - Does the time-intelligence logic use the correct date table and date column?
 
 1. If the query uses names that do not exist in your model, replace them manually with the correct names from the **Data** pane. Then **Run** the query. Use or adapt the following reference query if needed:
@@ -447,7 +428,7 @@ In this task, you will open the **Data Warehouse-<inject key="DeploymentID" enab
 
     ![](./Images/IQ68.png)
 
-1. When you have validated all three measures, select **Update model with changes (1)** — the button next to **Run** at the top of the query editor — to save the trusted measures to the semantic model. The button displays a count of pending changes, for example **Update model with changes (2)**.
+1. When you have validated all three measures, select **Update model with changes (1)** the button next to **Run** at the top of the query editor to save the trusted measures to the semantic model. The button displays a count of pending changes, for example **Update model with changes (2)**.
 
     ![](./Images/IQ69.png)
 
@@ -455,15 +436,7 @@ In this task, you will open the **Data Warehouse-<inject key="DeploymentID" enab
 
     ![](./Images/IQ70.png)
 
-    > **Note:** The banner stating *DAX queries are discarded on close* refers only to the query text in this view — measures applied through **Update model with changes** are saved permanently to the semantic model.
-
-> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-> - Navigate to the Lab Validation Page from the upper right corner in the lab guide section.
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
-> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
-
-<validation step="9f1e2d3c-4b5a-4e6f-8c7d-000000000004" />
+    > **Note:** The banner stating *DAX queries are discarded on close* refers only to the query text in this view measures applied through **Update model with changes** are saved permanently to the semantic model.
 
 ## Task 6: Create a lakehouse and upload files
 
@@ -474,15 +447,15 @@ In this task, you will create a lakehouse to store the sales order data and uplo
     - **Username:** `<inject key="AzureAdUserEmail"></inject>`
     - **Password:** `<inject key="AzureAdUserPassword"></inject>`
 
-1. From the left pane, select the **fabric-<inject key="DeploymentID" enableCopy="false"/>** workspace.
+1. Navigate to your workspace **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)**, click on **+ New item (2)** to create a new warehouse.
 
-    ![](./Images/IQ117.png)
+    ![](./Images/IQ71.png)
 
 1. In the **fabric-<inject key="DeploymentID" enableCopy="false"/>** workspace, click on **+ New item (1)**, search for **Lakehouse (2)** in the search bar, then select the **Lakehouse (3)** from the results to proceed.
 
     ![](./Images/IQ72.png)
 
-1. In the **New Lakehouse** dialog, enter the **Name** as **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/> (1)**, verify the **Location** is **fabric-<inject key="DeploymentID" enableCopy="false"/> (2)**, **uncheck the Lakehouse schemas box (3)** — it is checked by default — and click **Create (4)**.
+1. In the **New Lakehouse** dialog, enter the **Name** as **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/> (1)**, verify the **Location** is **fabric-<inject key="DeploymentID" enableCopy="false"/> (2)**, **uncheck the Lakehouse schemas box (3)** it is checked by default and click **Create (4)**.
 
     ![](./Images/IQ73.png)
 
@@ -506,29 +479,21 @@ In this task, you will create a lakehouse to store the sales order data and uplo
 
     ![](./Images/IQ79.png)
 
-> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-> - Navigate to the Lab Validation Page from the upper right corner in the lab guide section.
-> - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
-> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
-
-<validation step="9f1e2d3c-4b5a-4e6f-8c7d-000000000006" />
-
 ## Task 7: Create a notebook
 
 In this task, you will create a notebook and attach it to the **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/>** lakehouse so that the IQ-guided Spark sprint can read and write data.
 
-1. From the left pane, click on **fabric-<inject key="DeploymentID" enableCopy="false"/>** workspace.
+1. Navigate to your workspace **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)**, click on **+ New item (2)** to create a new warehouse.
 
-    ![](./Images/IQ117.png)
+    ![](./Images/IQ71.png)
 
 1. In the **fabric-<inject key="DeploymentID" enableCopy="false"/>** workspace, click on **+ New item (1)**, search for **Notebook (2)** in the search bar, and then select **Notebook (3)** from the results.
 
     ![](./Images/IQ80.png)
 
-1. On the **New Notebook** window, keep the default name **(1)** and then click on **Create (2)**.
+1. On the **New Notebook** page, enter a **Name (1)**, verify that the correct **Location (2)** is selected, and then select **Create (3)**.
 
-    ![](./Images/IQ81.png)
+    ![](./Images/IQ081.png)
 
 1. If a **Notebook Copilot Updates** welcome dialog appears, click **Skip for now** to dismiss it.
 
@@ -538,7 +503,7 @@ In this task, you will create a notebook and attach it to the **fabric_lakehouse
 
     ![](./Images/IQ83.png)
 
-1. Select the checkbox next to **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/> (1)**, then click **Connect (2)** in the bottom-right corner.
+1. Select the checkbox next to **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/> (1)**, then click **Add (2)** in the bottom-right corner.
 
     ![](./Images/IQ84.png)
 
@@ -548,10 +513,10 @@ In this task, you will create a notebook and attach it to the **fabric_lakehouse
 
 1. Click the **Edit** icon in the top-right corner of the cell, then replace the existing content with the code below.
 
-    ![](./Images/IQ88.png)
+    ![](./Images/IQ86.png)
 
     ```
-    # IQ-guided Spark sprint — sales order analysis
+    # IQ-guided Spark sprint sales order analysis
     Use notebook Copilot in this notebook to generate and refine PySpark code over the sales order data.
     ```
 
@@ -565,7 +530,7 @@ In this task, you will load the sales order CSV data into a Spark dataframe with
 
 1. With the notebook open, expand the **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/> (1)** under **Data items**, on the **Explorer** page, then expand **Files (2)**, select the **orders (3)** folder, click the **ellipsis (...) (4)** menu next to 2019.csv, and choose **Load data (5)** -> **Spark (6)**.
 
-    ![](./Images/IQ89.png)
+    ![](./Images/IQ88.png)
 
 1. A **new code** cell with the following code will be added to the notebook:
 
@@ -574,8 +539,7 @@ In this task, you will load the sales order CSV data into a Spark dataframe with
     # df now is a Spark DataFrame containing CSV data from "Files/orders/2019.csv".
     display(df)
     ```
-
-    ![](./Images/IQ90.png)
+    ![](./Images/IQ89.png)
 
 1. Use the **Run** cell button on the left side of the cell to execute it.
 
@@ -603,6 +567,7 @@ In this task, you will load the sales order CSV data into a Spark dataframe with
     df = spark.read.format("csv").schema(orderSchema).load("Files/orders/*.csv")
     display(df)
     ```
+     ![](./Images/IQ91.png)
 
 1. **Run (1)** the modified code cell and review the **output (2)**, which should now include sales data from 2019, 2020, and 2021 with correct column names.
 
@@ -616,11 +581,11 @@ In this task, you will use notebook Copilot to run a six-prompt IQ-guided Spark 
 
 > **Note:** Spark supports multiple coding languages. In this exercise, we will use *PySpark*, which is a Spark-optimized variant of Python and the default language in Fabric notebooks.
 
-1. Open the notebook **Copilot (1)** pane from the toolbar.
+1. Open the notebook **Copilot** pane from the toolbar.
 
     ![](./Images/IQ93.png)
 
-    > **Note:** Notebook Copilot requires the workspace to be on a paid Fabric capacity (F2 or higher) with the **Users can use Copilot and other features powered by Azure OpenAI** tenant setting and the cross-geo Azure OpenAI settings enabled, which you configured in Task 4 of this exercise. If the Copilot pane is unavailable, wait a few minutes for tenant settings to propagate and refresh the browser — or paste and run the reference code cells provided in each step below.
+    > **Note:** Notebook Copilot requires the workspace to be on a paid Fabric capacity (F2 or higher) with the **Users can use Copilot and other features powered by Azure OpenAI** tenant setting and the cross-geo Azure OpenAI settings enabled, which you configured in Task 4 of this exercise. If the Copilot pane is unavailable, wait a few minutes for tenant settings to propagate and refresh the browser or paste and run the reference code cells provided in each step below.
 
 1. Enter the following **Prompt 1** in the Copilot pane:
 
@@ -628,9 +593,11 @@ In this task, you will use notebook Copilot to run a six-prompt IQ-guided Spark 
     In the existing dataframe df, cast the UnitPrice and Tax columns to DoubleType and display the first 10 rows.
     ```
 
+    ![](./Images/IQ94.png)
+
 1. Review the generated code. Verify it references the correct dataframe and column names, then click **Insert** to add it to the notebook and click **&#9655; Run cell**.
 
-    > **Note:** When Copilot inserts a cell, an **Add a new cell below cell number** prompt may appear — click **Allow** to let Copilot add the cell.
+    > **Note:** When Copilot inserts a cell, an **Add a new cell below cell number** prompt may appear click **Allow** to let Copilot add the cell.
 
     ![](./Images/IQ95.png)
 
@@ -694,17 +661,7 @@ In this task, you will use notebook Copilot to run a six-prompt IQ-guided Spark 
     print("SalesRevenueSummary table saved!")
     ```
 
-
 1. In the **Explorer** pane, click the **ellipsis (...) (1)** menu next to **Tables**, select **Refresh (2)**, and verify that **SalesRevenueSummary (3)** now appears.
-
-
-    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-    > - Navigate to the Lab Validation Page from the upper right corner in the lab guide section.
-    > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
-    > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-    > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
-
-    <validation step="9f1e2d3c-4b5a-4e6f-8c7d-000000000007" />
 
 1. Enter the following **Prompt 5** in the Copilot pane:
 
@@ -739,12 +696,13 @@ In this task, you will use notebook Copilot to run a six-prompt IQ-guided Spark 
     ZORDER BY (Item);
     ```
 
-
 ## Task 10: Save the notebook and end the Spark session
 
 In this task, you will save the notebook with a meaningful name and end the Spark session to free up resources.
 
 1. In the notebook menu bar, click the ⚙️ **Settings (1)** icon to view the notebook settings, and set the **Name** of the notebook to **Spark IQ Sprint Notebook (2)**, then close the settings pane.
+
+    ![](./Images/IQ99.png)
 
     ![](./Images/IQ100.png)
 
