@@ -444,11 +444,6 @@ In this task, you will open the **Data Warehouse-<inject key="DeploymentID" enab
 
 In this task, you will create a lakehouse to store the sales order data and upload the orders folder from the lab files.
 
-1. Open a browser and go to <https://app.fabric.microsoft.com>. Sign in by using the following credentials:
-
-    - **Username:** `<inject key="AzureAdUserEmail"></inject>`
-    - **Password:** `<inject key="AzureAdUserPassword"></inject>`
-
 1. Navigate to your workspace **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)**, click on **+ New item (2)** to create a new warehouse.
 
     ![](./Images/IQ71.png)
